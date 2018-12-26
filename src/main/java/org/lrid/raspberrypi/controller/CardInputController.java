@@ -2,6 +2,7 @@ package org.lrid.raspberrypi.controller;
 
 
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
+import com.pi4j.io.gpio.PinState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,13 +21,13 @@ public class CardInputController {
 
     @GetMapping("/toggle/pin/tap/on")
     public String toggleTapOn() {
-        tap.high();
+        tap.setState(PinState.HIGH);
         return "Tapped";
     }
 
     @GetMapping("/toggle/pin/tap/off")
     public String toggleTapOff() {
-        tap.low();
+        tap.setState(PinState.LOW);
         return "Untapped";
     }
 
