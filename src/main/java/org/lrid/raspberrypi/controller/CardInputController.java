@@ -14,6 +14,9 @@ public class CardInputController {
     @Autowired
     GpioPinDigitalOutput tap;
 
+    @Autowired
+    GpioPinDigitalOutput chip;
+
     @GetMapping("/test")
     public String index() {
         return "Web Service is running!";
@@ -29,6 +32,19 @@ public class CardInputController {
     public String toggleTapOff() {
         tap.setState(PinState.LOW);
         return "Untapped";
+    }
+
+
+    @GetMapping("/toggle/pin/chip/on")
+    public String toggleChipOn() {
+        chip.setState(PinState.HIGH);
+        return "Chip in";
+    }
+
+    @GetMapping("/toggle/pin/chip/off")
+    public String toggleChipOff() {
+        chip.setState(PinState.LOW);
+        return "Chip out";
     }
 
 }
