@@ -13,7 +13,7 @@ public class CardInputConfiguration {
 
     @Bean(name="tap")
     GpioPinDigitalOutput tap() {
-        return GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_21, "TAP", PinState.LOW);
+        return GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_27, "TAP", PinState.LOW);
     }
 
 }
