@@ -17,34 +17,49 @@ public class CardInputController {
     @Autowired
     GpioPinDigitalOutput chip;
 
+    @Autowired
+    GpioPinDigitalOutput swiper;
+
     @GetMapping("/test")
     public String index() {
         return "Web Service is running!";
     }
 
-    @GetMapping("/toggle/pin/tap/on")
+    @GetMapping("/tap/on")
     public String toggleTapOn() {
         tap.setState(PinState.HIGH);
         return "Tapped";
     }
 
-    @GetMapping("/toggle/pin/tap/off")
+    @GetMapping("/tap/off")
     public String toggleTapOff() {
         tap.setState(PinState.LOW);
         return "Untapped";
     }
 
 
-    @GetMapping("/toggle/pin/chip/on")
+    @GetMapping("/chip/on")
     public String toggleChipOn() {
         chip.setState(PinState.HIGH);
         return "Chip in";
     }
 
-    @GetMapping("/toggle/pin/chip/off")
+    @GetMapping("/chip/off")
     public String toggleChipOff() {
         chip.setState(PinState.LOW);
         return "Chip out";
+    }
+
+    @GetMapping("/swipe/on")
+    public String toggleSwipeOn() {
+        swiper.setState(PinState.HIGH);
+        return "Swiped in";
+    }
+
+    @GetMapping("/swipe/off")
+    public String toggleSwipeOff() {
+        swiper.setState(PinState.LOW);
+        return "Swiped out";
     }
 
 }

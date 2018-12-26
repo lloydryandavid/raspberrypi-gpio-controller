@@ -21,4 +21,9 @@ public class CardInputConfiguration {
         return GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_06, "CHIP", PinState.LOW);
     }
 
+    @Bean(name="swiper")
+    GpioPinDigitalOutput swiper() {
+        return GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_05, "SWIPE", PinState.LOW);
+    }
+
 }
