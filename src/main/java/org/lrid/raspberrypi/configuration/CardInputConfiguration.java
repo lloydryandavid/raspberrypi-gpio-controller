@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CardInputConfiguration {
 
-//    @Bean(name="tap")
-//    GpioPinDigitalOutput tap() {
-//        return GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_21, "TAP", PinState.LOW);
-//    }
+    @Bean(name="tap")
+    GpioPinDigitalOutput tap() {
+        return GpioFactory.getInstance().provisionDigitalOutputPin(RaspiPin.GPIO_21, "TAP", PinState.LOW);
+    }
 
 }

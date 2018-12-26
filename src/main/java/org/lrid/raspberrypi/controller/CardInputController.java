@@ -10,24 +10,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CardInputController {
 
-//    @Autowired
-//    GpioPinDigitalOutput tap;
+    @Autowired
+    GpioPinDigitalOutput tap;
 
     @GetMapping("/test")
     public String index() {
         return "Web Service is running!";
     }
 
-//    @GetMapping("/toggle/pin/tap/on")
-//    public String toggleTapOn() {
-//        tap.high();
-//        return "Tapped";
-//    }
-//
-//    @GetMapping("/toggle/pin/tap/off")
-//    public String toggleTapOff() {
-//        tap.low();
-//        return "Untapped";
-//    }
+    @GetMapping("/toggle/pin/tap/on")
+    public String toggleTapOn() {
+        tap.high();
+        return "Tapped";
+    }
+
+    @GetMapping("/toggle/pin/tap/off")
+    public String toggleTapOff() {
+        tap.low();
+        return "Untapped";
+    }
 
 }
