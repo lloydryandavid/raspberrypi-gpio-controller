@@ -1,7 +1,2 @@
 server:
   port: 9090
-
-raspberrypi-gpio:
-  chip-in: 24
-  magstripe: 7
-  tap: 21
