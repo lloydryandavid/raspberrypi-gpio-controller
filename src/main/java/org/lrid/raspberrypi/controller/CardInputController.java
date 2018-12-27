@@ -1,8 +1,6 @@
 package org.lrid.raspberrypi.controller;
 
 
-import com.pi4j.io.gpio.GpioPinDigitalOutput;
-import com.pi4j.io.gpio.PinState;
 import org.lrid.raspberrypi.cardentrymode.TapEntryMode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,5 +30,12 @@ public class CardInputController {
         tapEntryMode.tapOut();
         return "Card tapped-out";
     }
+
+    @GetMapping("/reset-tap")
+    public String resetTap(){
+        tapEntryMode.resetTap();
+        return "Tap reset";
+    }
+
 
 }
