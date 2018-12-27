@@ -24,7 +24,7 @@ public class TapEntryMode {
         resetPinsToLow();
         PIN_27.setState(PinState.HIGH);
         PIN_28.setState(PinState.LOW);
-        Thread.sleep(2000);
+        Thread.sleep(20000);
         resetPinsToLow();
     }
 
@@ -32,7 +32,7 @@ public class TapEntryMode {
         resetPinsToLow();
         PIN_27.setState(PinState.LOW);
         PIN_28.setState(PinState.HIGH);
-        Thread.sleep(2000);
+        Thread.sleep(20000);
         resetPinsToLow();
     }
 
